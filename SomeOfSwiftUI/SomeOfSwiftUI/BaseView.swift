@@ -13,7 +13,9 @@ struct BaseView: View {
             List {
                 Section(header: Text("Components")) {
                     // List Items - rows
-                    Text("")
+                    NavigationLink("Stack") {
+                        StackComponentInfoView()
+                    }
                 }
             }
             .navigationTitle("Some of SwiftUI")
