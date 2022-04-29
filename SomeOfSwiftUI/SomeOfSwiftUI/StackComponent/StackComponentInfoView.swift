@@ -34,6 +34,10 @@ struct StackComponentInfoView: View {
 
             Section(header: Text("Stack의 종류")) {
                 NavigationLink("HStack") {
+                    StackDetailInfoView(navigationTitle: "HStack",
+                                        explanation: "HStack은 자식뷰를 수평 방향으로  정렬하여 보여주는 컨테이너 뷰입니다.",
+                                        exampleView: AnyView(Text("예시 뷰")),
+                                        caseView: AnyView(Text("활용예시 뷰")))
 
                 }
                 NavigationLink("VStack") {
@@ -43,7 +47,7 @@ struct StackComponentInfoView: View {
 
                 }
             }
-            
+
             Section(header: Text("LazyStack의 종류")) {
                 NavigationLink("LazyHStack") {
 
