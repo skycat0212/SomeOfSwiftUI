@@ -53,6 +53,15 @@ struct StackComponentInfoView: View {
                 }
             }
 
+            Section(header: Text("파라미터")) {
+                NavigationLink("alginment") {
+
+                }
+                NavigationLink("") {
+
+                }
+            }
+
         }
         .listStyle(.sidebar)
         .navigationTitle("Stack")

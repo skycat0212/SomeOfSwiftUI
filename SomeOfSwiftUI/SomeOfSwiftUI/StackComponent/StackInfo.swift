@@ -113,13 +113,13 @@ enum StackInfo: String {
 
         switch self {
         case .HStack:
-            @State var a: String = "홍길동"
+            @State var tempText1: String = "홍길동"
             return AnyView(
                 SwiftUI.HStack(spacing: 10) {
                     Text("이름 :")
                         .padding(5)
                         .border(.red, width: 1)
-                    TextField("", text: $a)
+                    TextField("", text: $tempText1)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(5)
                         .border(.red, width: 1)
@@ -130,14 +130,14 @@ enum StackInfo: String {
             )
 
         case .VStack:
-            @State var b: String = "홍길동"
+            @State var tempText2: String = "홍길동"
             return AnyView(
                 SwiftUI.VStack(spacing: 10) {
 
                     SwiftUI.HStack(spacing: 10) {
                         Text("이메일 :")
                             .padding(5)
-                        TextField("", text: $b)
+                        TextField("", text: $tempText2)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(5)
                         Button("중복확인", action: {})
@@ -149,7 +149,7 @@ enum StackInfo: String {
                     SwiftUI.HStack(spacing: 10) {
                         Text("이름 :")
                             .padding(5)
-                        TextField("", text: $b)
+                        TextField("", text: $tempText2)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(5)
                     }
@@ -159,7 +159,7 @@ enum StackInfo: String {
                     SwiftUI.HStack(spacing: 10) {
                         Text("닉네임 :")
                             .padding(5)
-                        TextField("", text: $b)
+                        TextField("", text: $tempText2)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(5)
                         Button("중복확인", action: {})
