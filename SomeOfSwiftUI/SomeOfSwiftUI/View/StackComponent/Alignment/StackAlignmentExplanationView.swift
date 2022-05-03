@@ -38,11 +38,11 @@ struct StackAlignmentExplanationView: View {
             }
 
             Section {
-                Text("ZStack은 ")
+                Text("ZStack은 alignment 값으로 Alignment 타입을 받습니다.")
                     .font(.callout)
                     .padding([.top, .bottom], 5)
-                NavigationLink("") {
-
+                NavigationLink("Alignment") {
+                    AlignmentExplanationView()
                 }
             }
 
