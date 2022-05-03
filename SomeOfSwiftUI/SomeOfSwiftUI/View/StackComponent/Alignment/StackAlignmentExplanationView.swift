@@ -28,11 +28,12 @@ struct StackAlignmentExplanationView: View {
             }
 
             Section {
-                Text("VStack과 LazyVStack은 alignment 값으로  --타입을 받습니다.")
+                Text("VStack과 LazyVStack은 alignment 값으로  HorizontalAlignment 타입을 받습니다.")
                     .font(.callout)
                     .padding([.top, .bottom], 5)
-                NavigationLink("") {
-
+                NavigationLink("HorizontalAlignment") {
+                    HorizontalalignmentExplanationView()
+                        .navigationBarTitleDisplayMode(.large)
                 }
             }
 
