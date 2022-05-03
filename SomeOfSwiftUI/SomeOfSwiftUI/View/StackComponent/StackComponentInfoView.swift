@@ -19,6 +19,7 @@ struct StackComponentInfoView: View {
     """
 
     var body: some View {
+        // TODO: seperator 길이 수정 필요
         List {
             Section(header: Text("개요")) {
                 Image("StackViewHierarchy")
@@ -34,28 +35,28 @@ struct StackComponentInfoView: View {
 
             Section(header: Text("Stack의 종류")) {
                 NavigationLink("HStack") {
-                    StackDetailInfoView(stackInfo: .HStack)
+                    StackDetailInfoView(stackType: .HStack)
                 }
                 NavigationLink("VStack") {
-                    StackDetailInfoView(stackInfo: .VStack)
+                    StackDetailInfoView(stackType: .VStack)
                 }
                 NavigationLink("ZStack") {
-                    StackDetailInfoView(stackInfo: .ZStack)
+                    StackDetailInfoView(stackType: .ZStack)
                 }
             }
 
             Section(header: Text("LazyStack의 종류")) {
                 NavigationLink("LazyHStack") {
-                    StackDetailInfoView(stackInfo: .LazyHStack)
+                    StackDetailInfoView(stackType: .LazyHStack)
                 }
                 NavigationLink("LazyVStack") {
-                    StackDetailInfoView(stackInfo: .LazyVStack)
+                    StackDetailInfoView(stackType: .LazyVStack)
                 }
             }
 
             Section(header: Text("파라미터")) {
                 NavigationLink("alginment") {
-
+                    StackAlignmentExplanationView()
                 }
                 NavigationLink("") {
 

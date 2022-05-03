@@ -9,42 +9,40 @@ import SwiftUI
 
 /// Stack의 각각의 종류별로 디테일한 정보를 설명하기 위해 사용되는 뷰
 struct StackDetailInfoView: View {
-    let stackInfo: StackInfo
+    let stackType: StackType
 
     var body: some View {
         List {
             // MARK: 설명 섹션
             Section {
-                Text(stackInfo.explanation)
+                StackCaseExplanationView(stackType: stackType)
                     .padding([.top, .bottom])
             }
 
             // MARK: 예시 섹션
             Section(header: Text("예시")) {
-                stackInfo.exampleView
-                    .padding([.top, .bottom])
-            }
-
-            // MARK: 활용 예시 섹션
-            Section(header: Text("활용예제")) {
-                stackInfo.caseView
+                HStack {
+                    Spacer()
+                    StackCaseExampleView(stackType: stackType)
+                        .padding([.top, .bottom])
+                    Spacer()
+                }
+                StackCaseUseExampleView(type: stackType)
                     .padding([.top, .bottom])
                     .listRowBackground(Color.white)
+
             }
+
         }
-        .navigationTitle(Text(stackInfo.rawValue))
+        .navigationTitle(Text(stackType.rawValue))
     }
 }
 
 struct StackDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
+        StackAlignmentExplanationView()
         BaseView()
         StackComponentInfoView()
-        StackDetailInfoView(stackInfo: .VStack)
+        StackDetailInfoView(stackType: .VStack)
     }
-}
-
-func a( number: [Int]) {
-    var number = number
-    number.append(1)
 }
