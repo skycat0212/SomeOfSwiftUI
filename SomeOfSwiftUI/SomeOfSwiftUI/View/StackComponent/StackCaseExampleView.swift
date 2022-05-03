@@ -62,6 +62,7 @@ struct StackCaseExampleView: View {
                                      \(dateFormatter.string(from: Date()))
                                      """)
                             .font(.footnote)
+                            .multilineTextAlignment(.center)
                             .padding(.bottom, 10)
                         }
                     }
