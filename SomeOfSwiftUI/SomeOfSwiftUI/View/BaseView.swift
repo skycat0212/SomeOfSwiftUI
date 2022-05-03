@@ -21,6 +21,7 @@ struct BaseView: View {
             .navigationTitle("Some of SwiftUI")
             .listStyle(.grouped)
         }
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
