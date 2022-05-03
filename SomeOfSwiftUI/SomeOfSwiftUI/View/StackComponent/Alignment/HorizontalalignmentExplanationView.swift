@@ -72,7 +72,7 @@ trailing은 뷰의 뒤쪽의 가장자리를 나타냅니다.\t
 
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("VerticalAlignment")
+        .navigationTitle("HorizontalAlignment")
         .navigationBarTitleDisplayMode(.large)
     }
 }
