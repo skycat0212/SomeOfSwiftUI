@@ -70,20 +70,12 @@ bottomTrailing은 뷰의 아래쪽과 뒤쪽 가장자리를 나타냅니다.\t
                 HStack {
                     Spacer()
                     ZStack(alignment: alignment) {
-                        Spacer()
-                        Text("Family\nName")
-                            .multilineTextAlignment(.center)
-                            .font(.headline)
-                        Spacer()
-                        Text("Kang")
-                            .font(.caption)
-                        Spacer()
-                        Text("Kim")
-                            .font(.caption)
-                        Spacer()
-                        Text("Lee")
-                            .font(.caption)
-                        Spacer()
+                        Rectangle()
+                            .foregroundColor(.yellow)
+                            .frame(width: 150, height: 150)
+                        Circle()
+                            .foregroundColor(.red)
+                            .frame(width: 30, height: 30)
                     }
                     Spacer()
                 }
