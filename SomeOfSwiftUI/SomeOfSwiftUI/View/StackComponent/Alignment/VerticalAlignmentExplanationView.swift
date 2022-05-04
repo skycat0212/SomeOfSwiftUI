@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VerticalAlignmentExplanationView: View {
-    @State private var hStackAlignment: VerticalAlignment = VerticalAlignment.lastTextBaseline
+    @State private var hStackAlignment: VerticalAlignment = .top
 
     let verticalAlignmentExplainString: String =
 """
