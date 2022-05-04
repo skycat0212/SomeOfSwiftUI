@@ -29,7 +29,6 @@ struct StackDetailInfoView: View {
                 }
                 StackCaseUseExampleView(type: stackType)
                     .padding([.top, .bottom])
-                    .listRowBackground(Color.white)
 
             }
 
