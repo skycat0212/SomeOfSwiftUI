@@ -32,25 +32,30 @@ lastTextBaseline은 최하위 텍스트의 BaseLine 나타냅니다. \t
             Section {
                 Text(verticalAlignmentExplainString)
                     .font(.callout)
-                    .padding([.top, .bottom], 5)
+                    .padding([.top, .bottom])
             }
 
             Section(header: Text("about BaseLine")) {
                 Image("LetterArchitect")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .padding()
             }
 
             Section(header: Text("예제")) {
+                Text("\(hStackAlignment.alignmentName)")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .listRowSeparator(.hidden)
+                    .padding(.top, 5)
+
                 Picker("what?", selection: $hStackAlignment) {
                     ForEach(VerticalAlignment.allCases, id: \.self) { alignment in
-                        Text(alignment.alignmentName)
+                        Text(alignment.alignmentNameAbbreviation)
                     }
                 }
                 .pickerStyle(.segmented)
-                .listRowSeparator(.hidden)
-
-                Text("selected : \(hStackAlignment.alignmentName)")
+                .listRowInsets(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
 
                 HStack(alignment: hStackAlignment) {
                     Spacer()
@@ -69,7 +74,8 @@ lastTextBaseline은 최하위 텍스트의 BaseLine 나타냅니다. \t
                     Spacer()
 
                 }
-                .padding([.top, .bottom], 10)
+                .listRowSeparator(.hidden)
+                .padding([.top, .bottom])
             }
 
         }

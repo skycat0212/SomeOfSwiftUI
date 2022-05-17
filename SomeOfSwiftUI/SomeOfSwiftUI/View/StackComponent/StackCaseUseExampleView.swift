@@ -28,6 +28,9 @@ struct StackCaseUseExampleView: View {
                     .padding(5)
                     .border(.red, width: 1)
             }
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+            .border(.blue, width: 2)
+            .frame(minHeight: 100)
 
         case .VStack:
             VStack(spacing: 10) {
@@ -66,6 +69,9 @@ struct StackCaseUseExampleView: View {
                 .padding(5)
                 .border(.red, width: 1)
             }
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+            .border(.blue, width: 2)
+            .frame(minHeight: 200)
 
         default:
             EmptyView()

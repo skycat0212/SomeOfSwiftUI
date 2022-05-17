@@ -47,17 +47,23 @@ bottomTrailing은 뷰의 아래쪽과 뒤쪽 가장자리를 나타냅니다.\t
             Section {
                 Text(alignmentExplainString)
                     .font(.callout)
-                    .padding([.top, .bottom], 5)
+                    .padding([.top, .bottom])
             }
 
             Section(header: Text("about leading&trailing")) {
                 Image("AlignmentGuide")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .padding(5)
+                    .padding()
             }
 
             Section(header: Text("예제")) {
+                Text("\(alignment.alignmentName)")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .listRowSeparator(.hidden)
+                    .padding(.top)
+
                 Picker("what?", selection: $alignment) {
                     ForEach(Alignment.allCases, id: \.self) { alignment in
                         Text(alignment.alignmentNameAbbreviation)
@@ -65,8 +71,8 @@ bottomTrailing은 뷰의 아래쪽과 뒤쪽 가장자리를 나타냅니다.\t
                 }
                 .pickerStyle(.segmented)
                 .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
 
-                Text("selected : \(alignment.alignmentName)")
                 HStack {
                     Spacer()
                     ZStack(alignment: alignment) {
@@ -79,8 +85,9 @@ bottomTrailing은 뷰의 아래쪽과 뒤쪽 가장자리를 나타냅니다.\t
                     }
                     Spacer()
                 }
-                .padding([.top, .bottom], 10)
+                .padding([.top, .bottom])
             }
+            .listRowSeparator(.hidden)
 
         }
         .listStyle(.insetGrouped)

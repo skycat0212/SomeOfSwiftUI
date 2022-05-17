@@ -28,6 +28,7 @@ struct StackCaseExampleView: View {
                         .background(colors[$0])
                 }
             }
+            .frame(minHeight: 100)
 
         case .VStack:
             VStack(spacing: 0) {
@@ -37,6 +38,8 @@ struct StackCaseExampleView: View {
                         .background(colors[$0])
                 }
             }
+            .padding([.top, .bottom], 20)
+            .frame(minHeight: 100)
 
         case .ZStack:
             ZStack {
@@ -49,9 +52,10 @@ struct StackCaseExampleView: View {
                 }
             }
             .frame(width: 140, height: 140, alignment: .topLeading)
+            .frame(minHeight: 100)
 
         case .LazyHStack:
-            VStack(spacing: 30) {
+            VStack(spacing: 10) {
                 Text("스크롤 뷰와 함께 적용한 예시입니다.")
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 10) {
@@ -63,24 +67,36 @@ struct StackCaseExampleView: View {
                                      """)
                             .font(.footnote)
                             .multilineTextAlignment(.center)
-                            .padding(.bottom, 10)
+                            .padding(10)
+                            .border(.red, width: 1)
                         }
                     }
+                    .padding(10)
+                    .border(.blue, width: 2)
+                    .padding(10)
                 }
             }
+            .frame(minHeight: 100)
 
         case .LazyVStack:
-            VStack(spacing: 30) {
+            VStack(spacing: 10) {
                 Text("스크롤 뷰와 함께 적용한 예시입니다.")
                 ScrollView(.vertical) {
-                    LazyVStack(spacing: 0) {
+                    LazyVStack(spacing: 10) {
                         ForEach(1...100, id: \.self) {
                             Text("Column \($0), CreatedTime: \(dateFormatter.string(from: Date()))")
                                 .font(.footnote)
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                .border(.red, width: 1)
                         }
                     }
+                    .padding(5)
+                    .border(.blue, width: 2)
+                    .padding(10)
                 }.frame(height: 300)
             }
+            .frame(minHeight: 100)
+
         }
     }
 }

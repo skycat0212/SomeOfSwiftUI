@@ -23,6 +23,17 @@ extension VerticalAlignment: CaseIterable, Hashable {
         }
     }
 
+    var alignmentNameAbbreviation: String {
+        switch self {
+        case .top: return "top"
+        case .center: return "center"
+        case .bottom: return "bottom"
+        case .firstTextBaseline: return "firstTB"
+        case .lastTextBaseline: return "lastTB"
+        default: return ""
+        }
+    }
+
     public static var allCases: [VerticalAlignment] {
         [.top, .center, .bottom, .firstTextBaseline, .lastTextBaseline]
     }
