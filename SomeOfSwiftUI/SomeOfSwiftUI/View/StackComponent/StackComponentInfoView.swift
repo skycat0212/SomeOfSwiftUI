@@ -58,10 +58,9 @@ struct StackComponentInfoView: View {
                 NavigationLink("alignment") {
                     StackAlignmentExplanationView()
                 }
-                Text("spacing")
-//                NavigationLink("") {
-//
-//                }
+                NavigationLink("spacing") {
+                    StackSpacingExplanationView()
+                }
             }
 
         }
